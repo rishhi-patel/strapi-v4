@@ -1,3 +1,4 @@
-'use strict';
+"use strict";
 
-module.exports = {};
+const movie = require("./movie");
+module.exports = { movie };
