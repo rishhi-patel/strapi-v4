@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  Heading,
   Table,
   Tbody,
   Tr,
@@ -11,13 +10,6 @@ import {
   Typography,
   Text,
   Flex,
-  ModalLayout,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
-  Searchbar,
-  SearchForm,
-  GridLayout,
 } from "@strapi/design-system";
 import movieRequest from "../../api";
 import NotFound from "../notFound";
@@ -47,7 +39,7 @@ const MovieTable = ({ movies, onAssociateMovie }) => (
               <Button
                 variant="text"
                 onClick={() => onAssociateMovie(movie.id)}
-                disabled={movie.tmdbMovieId !== null}
+                disabled={Boolean(movie.tmdbMovieId)}
               >
                 Associate Movie
               </Button>
@@ -55,13 +47,6 @@ const MovieTable = ({ movies, onAssociateMovie }) => (
           </Td>
         </Tr>
       ))}
-      {movies.length === 0 && (
-        <Tr>
-          <Td colSpan={5} textAlign="center">
-            <Text variant="text">No movies found</Text>
-          </Td>
-        </Tr>
-      )}
     </Tbody>
   </Table>
 );
