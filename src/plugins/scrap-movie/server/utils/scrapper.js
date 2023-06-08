@@ -47,7 +47,7 @@ async function matchMoviesWithTMDB(scrapedMovies, strapi) {
             },
           }
         );
-        if (result.length)
+        if (result.length > 0)
           await strapi.entityService.update(
             "plugin::scrap-movie.movie",
             result[0].id,
@@ -70,7 +70,33 @@ async function matchMoviesWithTMDB(scrapedMovies, strapi) {
           ...scrapedMovie,
           tmdbMovieId: matchedMovie.id,
         });
-      } else movies.push(scrapedMovie);
+      } else {
+        const result = await strapi.entityService.findMany(
+          "plugin::scrap-movie.movie",
+          {
+            filters: {
+              movieTitle,
+            },
+          }
+        );
+        if (result.length > 0)
+          await strapi.entityService.update(
+            "plugin::scrap-movie.movie",
+            result[0].id,
+            {
+              data: {
+                ...scrapedMovie,
+              },
+            }
+          );
+        else
+          await strapi.entityService.create("plugin::scrap-movie.movie", {
+            data: {
+              ...scrapedMovie,
+            },
+          });
+        movies.push(scrapedMovie);
+      }
     }
     return movies;
   } catch (error) {
@@ -131,7 +157,6 @@ async function scrapeMovies(strapi) {
           director,
           cast,
           description,
-          tmdbMovieId: "",
         });
       }
     }
