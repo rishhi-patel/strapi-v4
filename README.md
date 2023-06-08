@@ -1,3 +1,11 @@
+# Plugin for Scraping movies  
+this plugin scraps movie details fron https://www.pathe.tn/fr and associate with https://www.themoviedb.org and also it lets user to associate movies that couldn't be matched automatically and saved scraped cinema showtimes and associated movies in the Strapi database. Also it synchronizes movie data periodically (https://github.com/rishhi-patel/strapi-v4/blob/main/config/cron-tasks.js#L6).
+
+Note : Strapi-v4's Typescript plugin has some dependency bugs wich breaks app so i developed whole plugin in Javascript.
+
+![scrap](https://github.com/rishhi-patel/strapi-v4/assets/98315242/fa94320c-a354-43d9-a278-559796335146)
+
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
