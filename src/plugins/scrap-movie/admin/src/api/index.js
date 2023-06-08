@@ -10,6 +10,12 @@ const movieRequest = {
   searchOnTmdb: async (title) => {
     return await request(`/scrap-movie/tmdb?title=${title}`, { method: "GET" });
   },
+  updateMovie: async (id, tmdbMovieId) => {
+    return await request(`/scrap-movie/movie/${id}`, {
+      method: "PUT",
+      body: { data: { tmdbMovieId } },
+    });
+  },
 };
 
 export default movieRequest;

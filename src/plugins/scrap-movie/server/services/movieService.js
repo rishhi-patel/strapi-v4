@@ -21,11 +21,8 @@ module.exports = ({ strapi }) => ({
   },
 
   async update(id, data) {
-    return await strapi.entityService.update(
-      "plugin::scrap-movie.movie",
-      id,
-      data
-    );
+    await strapi.entityService.update("plugin::scrap-movie.movie", id, data);
+    return await strapi.entityService.findMany("plugin::scrap-movie.movie");
   },
 
   async toggle(id) {
