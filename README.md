@@ -1,5 +1,5 @@
 # Plugin for Scraping movies  
-this plugin scraps movie details fron https://www.pathe.tn/fr and associate with https://www.themoviedb.org and also it lets user to associate movies that couldn't be matched automatically and saved scraped cinema showtimes and associated movies in the Strapi database. Also it synchronizes movie data periodically (https://github.com/rishhi-patel/strapi-v4/blob/main/config/cron-tasks.js#L6).
+This powerful plugin efficiently extracts movie details from the website https://www.pathe.tn/fr and seamlessly links them with the comprehensive database available at https://www.themoviedb.org. Additionally, it empowers users to manually associate movies that couldn't be matched automatically, ensuring a complete and accurate collection. The plugin intelligently stores scraped cinema showtimes and their corresponding associated movies in the highly flexible and reliable Strapi database. Moreover, it enables the synchronization of movie data at regular intervals, ensuring that the information is always up-to-date with help of  corn job.(https://github.com/rishhi-patel/strapi-v4/blob/main/config/cron-tasks.js#L6).
 
 Note : Strapi-v4's Typescript plugin has some dependency bugs wich breaks app so i developed whole plugin in Javascript.
 
