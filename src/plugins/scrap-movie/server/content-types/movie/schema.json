@@ -27,7 +27,7 @@
       "type": "string"
     },
     "tmdbMovieId": {
-      "type": "string"
+      "type": "integer"
     }
   }
 }

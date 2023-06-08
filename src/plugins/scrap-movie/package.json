@@ -12,6 +12,8 @@
     "@strapi/design-system": "^1.6.3",
     "@strapi/helper-plugin": "^4.6.0",
     "@strapi/icons": "^1.6.3",
+    "axios": "^1.4.0",
+    "cheerio": "^1.0.0-rc.12",
     "prop-types": "^15.7.2"
   },
   "devDependencies": {

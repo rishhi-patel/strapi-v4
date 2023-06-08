@@ -34,4 +34,14 @@ module.exports = {
       ctx.throw(500, err);
     }
   },
+  async sync(ctx) {
+    try {
+      ctx.body = await strapi
+        .plugin("scrap-movie")
+        .service("movieService")
+        .scrap();
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
 };

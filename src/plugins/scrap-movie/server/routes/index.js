@@ -38,4 +38,13 @@ module.exports = [
       auth: false,
     },
   },
+  {
+    method: "GET",
+    path: "/movie/sync",
+    handler: "movieController.sync",
+    config: {
+      policies: [],
+      auth: false,
+    },
+  },
 ];
