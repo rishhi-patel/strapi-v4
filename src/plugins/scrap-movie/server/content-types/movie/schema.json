@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "Movie"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "movieTitle": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "string"
+    },
+    "director": {
+      "type": "string"
+    },
+    "cast": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "tmdbMovieId": {
+      "type": "integer",
+      "default": null
+    }
+  }
+}
