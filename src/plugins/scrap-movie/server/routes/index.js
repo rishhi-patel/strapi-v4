@@ -47,4 +47,13 @@ module.exports = [
       auth: false,
     },
   },
+  {
+    method: "GET",
+    path: "/tmdb",
+    handler: "movieController.tmdbSearch",
+    config: {
+      policies: [],
+      auth: false,
+    },
+  },
 ];

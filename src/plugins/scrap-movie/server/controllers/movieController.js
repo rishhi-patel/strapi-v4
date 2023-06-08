@@ -44,4 +44,15 @@ module.exports = {
       ctx.throw(500, err);
     }
   },
+  async tmdbSearch(ctx) {
+    console.log({ query: ctx.query });
+    try {
+      ctx.body = await strapi
+        .plugin("scrap-movie")
+        .service("movieService")
+        .searchMoviesTMDB(ctx.query);
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
 };

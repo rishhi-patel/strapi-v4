@@ -7,6 +7,9 @@ const movieRequest = {
   scrapMovies: async () => {
     return await request("/scrap-movie/movie/sync", { method: "GET" });
   },
+  searchOnTmdb: async (title) => {
+    return await request(`/scrap-movie/tmdb?title=${title}`, { method: "GET" });
+  },
 };
 
 export default movieRequest;
