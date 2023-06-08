@@ -39,12 +39,33 @@ async function matchMoviesWithTMDB(scrapedMovies, strapi) {
       );
 
       if (matchedMovie) {
-        await strapi.entityService.create("plugin::scrap-movie.movie", {
-          data: {
-            ...scrapedMovie,
-            tmdbMovieId: matchedMovie.id,
-          },
-        });
+        const result = await strapi.entityService.findMany(
+          "plugin::scrap-movie.movie",
+          {
+            filters: {
+              movieTitle,
+            },
+          }
+        );
+        if (result.length)
+          await strapi.entityService.update(
+            "plugin::scrap-movie.movie",
+            result[0].id,
+            {
+              data: {
+                ...scrapedMovie,
+                tmdbMovieId: matchedMovie.id,
+              },
+            }
+          );
+        else
+          await strapi.entityService.create("plugin::scrap-movie.movie", {
+            data: {
+              ...scrapedMovie,
+              tmdbMovieId: matchedMovie.id,
+            },
+          });
+
         movies.push({
           ...scrapedMovie,
           tmdbMovieId: matchedMovie.id,
@@ -54,7 +75,7 @@ async function matchMoviesWithTMDB(scrapedMovies, strapi) {
     return movies;
   } catch (error) {
     console.error("Error matching movies with TMDB:", error);
-    return { matchedMovies: [], unmatchedMovies: [] };
+    return { movies: [] };
   }
 }
 

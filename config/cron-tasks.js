@@ -6,8 +6,8 @@ module.exports = {
       console.log("Data Sync Completed");
     },
     options: {
-      // Every minute
-      rule: "0 0 * * * *",
+      // Every 2 minute
+      rule: `0 0 * * * *`,
     },
   },
 };
