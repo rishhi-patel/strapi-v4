@@ -3,7 +3,8 @@ this plugin scraps movie details fron https://www.pathe.tn/fr and associate with
 
 Note : Strapi-v4's Typescript plugin has some dependency bugs wich breaks app so i developed whole plugin in Javascript.
 
-![scrap](https://github.com/rishhi-patel/strapi-v4/assets/98315242/fa94320c-a354-43d9-a278-559796335146)
+![scrap](https://github.com/rishhi-patel/strapi-v4/assets/98315242/456468f4-ec01-45d8-b852-21f9dad71a2e)
+
 
 
 # 🚀 Getting started with Strapi
