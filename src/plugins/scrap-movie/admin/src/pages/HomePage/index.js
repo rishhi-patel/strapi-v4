@@ -7,12 +7,18 @@
 import React from "react";
 // import PropTypes from 'prop-types';
 import pluginId from "../../pluginId";
+import NotFound from "../notFound";
+import MovieListingPage from "../MovieListingPage";
+import Loading from "../loading";
+import MovieDetailsPage from "../movieDetails";
 
 const HomePage = () => {
   return (
     <div>
-      {/* <h1>{pluginId}&apos;s HomePage</h1> */}
-      <p>Happy coding</p>
+      <MovieListingPage />
+      <MovieDetailsPage />
+      <NotFound />
+      <Loading />
     </div>
   );
 };
